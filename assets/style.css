@@ -125,18 +125,16 @@ img {
 .fonctionnement h4, .fonctionnement p {
   font-weight: 500;
 }
-.fonctionnement .wrapper {
-  padding-right: 5px;
-}
 .fonctionnement .card-fonctionnement {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  padding-left: 10px;
 }
 .fonctionnement .card-fonctionnement .card-content {
   background-color: #F6F6F6;
-  width: 322px;
+  width: 100%;
   height: 72px;
   display: flex;
   align-items: center;
