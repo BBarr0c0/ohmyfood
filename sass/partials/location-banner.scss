@@ -1,0 +1,52 @@
+/************************************
+************** LOCATION ******************
+*************************************/
+
+.location {
+    background-color: $location-bg-color;
+    color: $txt-grey;
+    height: 50px;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0px 2px 4px 4px #00000045;
+    
+
+    span {
+        padding-right: 10px;
+        margin-left: 15px;
+    }
+
+    input {
+        background-color: $location-bg-color;
+        font-weight: 500;
+        color: $txt-grey;
+        width: 120px;
+        outline: none; //supprime border de l'input quand sélectionné
+    }
+}
+
+
+/************************************
+************** BANNER ****************
+*************************************/
+
+.banner {
+	padding: 50px 0;
+
+    h2, p {
+        text-align: center;
+    }
+
+	h2 {
+		margin: auto;
+        width: 75%;
+	}
+
+	p {
+		font-size: 18px;
+        font-weight: 300;
+		color: $txt-grey;
+		margin: 10px auto 30px auto;
+        width: 90%;
+	}
+}
