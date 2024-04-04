@@ -1,3 +1,265 @@
+/*************************
+******** Variables *******
+*************************/
+/****************************
+****** GENERAL / BODY *******
+****************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  object-fit: cover;
+}
 
+body {
+  background-color: #F6F6F6;
+}
+
+/*h2 et h3 de la homepage*/
+.tagline, .title-homepage {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/*h3 de la homepage*/
+.title-homepage {
+  margin-bottom: 30px;
+}
+
+.btn {
+  height: 50px;
+  width: 218px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(356deg, #9356DC -11%, #FF79DA 123%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  color: white;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.logo-header, .logo-footer {
+  font-family: "Shrikhand", "cursive";
+  font-weight: 400;
+}
+
+.wrapper {
+  padding: 60px 20px 50px 20px;
+}
+
+img {
+  object-fit: cover;
+}
+
+/************************************
+************** HEADER ******************
+*************************************/
+.homepage-header {
+  background-color: white;
+  text-align: center;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2705882353));
+}
+.homepage-header .logo-header {
+  font-size: 30px;
+  height: 63px;
+  padding-top: 10px;
+}
+
+/************************************
+************** LOCATION ******************
+*************************************/
+.location {
+  background-color: #EAEAEA;
+  color: #353535;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2705882353);
+}
+.location span {
+  padding-right: 10px;
+  margin-left: 15px;
+}
+.location input {
+  background-color: #EAEAEA;
+  font-weight: 500;
+  color: #353535;
+  width: 120px;
+  outline: none;
+}
+
+/************************************
+************** BANNER ****************
+*************************************/
+.banner {
+  padding: 50px 0;
+}
+.banner h2, .banner p {
+  text-align: center;
+}
+.banner h2 {
+  margin: auto;
+  width: 75%;
+}
+.banner p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #353535;
+  margin: 10px auto 30px auto;
+  width: 90%;
+}
+
+/************************************
+************ FONCTIONNEMENT *********
+*************************************/
+.fonctionnement {
+  background-color: white;
+}
+.fonctionnement h4, .fonctionnement p {
+  font-weight: 500;
+}
+.fonctionnement .wrapper {
+  padding-right: 5px;
+}
+.fonctionnement .card-fonctionnement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.fonctionnement .card-fonctionnement .card-content {
+  background-color: #F6F6F6;
+  width: 322px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  padding-left: 30px;
+  position: relative;
+}
+.fonctionnement .card-fonctionnement span {
+  font-size: 18px;
+  color: #7e7e7e;
+}
+.fonctionnement .card-fonctionnement .fa-store {
+  color: #9356DC;
+}
+.fonctionnement .number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #9356DC;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  color: white;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  left: -12px;
+  bottom: 22px;
+}
+
+/************************************
+************ RESTAURANTS *********
+*************************************/
+.restaurants .cards-restaurant-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.restaurants a {
+  color: black;
+  z-index: 1;
+}
+.restaurants a .card-restaurant {
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+}
+.restaurants a img {
+  height: 170px;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-position: center bottom;
+}
+.restaurants a:nth-child(2) img {
+  object-position: 0 -155px;
+}
+
+.restaurants .new-restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 29px;
+  width: 80px;
+  color: #008766;
+  background: #99E2D0;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+  position: absolute;
+  top: 13px;
+  right: 12px;
+}
+.restaurants .card-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px 15px 15px;
+  align-items: center;
+}
+.restaurants .card-content h4, .restaurants .card-content p {
+  padding-bottom: 5px;
+}
+.restaurants .card-content .fa-heart {
+  font-size: 22px;
+  position: absolute;
+  right: 25px;
+  z-index: 2;
+}
+
+/************************************
+************ FOOTER *****************
+*************************************/
+footer {
+  background: #353535;
+  color: white;
+  padding: 25px 20px;
+  margin-top: 15px;
+}
+footer h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 8px;
+  /*pour les deux premiers <a> plus gras*/
+}
+.nav-footer a {
+  color: white;
+  font-weight: 400;
+}
+.nav-footer a span {
+  width: 20px;
+  margin-right: 8px;
+}
+.nav-footer li:nth-of-type(-n+2) > a {
+  font-weight: 500;
+}
 
 /*# sourceMappingURL=style.css.map */

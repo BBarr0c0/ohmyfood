@@ -1,0 +1,38 @@
+/************************************
+************ FOOTER *****************
+*************************************/
+
+footer {
+	background: $txt-grey;
+    color: white;
+    padding: 25px 20px;
+    margin-top: 15px;
+
+	h4 {
+		font-size: 18px;
+		font-weight: 400;
+	}
+}
+
+.nav-footer {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	gap: 8px;
+
+	a {
+		color: white;
+        font-weight: 400;
+        
+		span {
+			width: 20px;
+			margin-right: 8px;
+		}
+	}
+    
+    /*pour les deux premiers <a> plus gras*/
+    li:nth-of-type(-n+2) > a {
+        font-weight: 500;
+    }
+
+}
