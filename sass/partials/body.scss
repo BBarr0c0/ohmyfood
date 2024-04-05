@@ -18,13 +18,13 @@ body {
     background-color: $bg-color;
 }
 
-/*h2 et h3 de la homepage*/
+/*h1 et h2 de la homepage*/
 .tagline, .title-homepage {
     font-size: 24px;
     font-weight: 700;
 }
 
-/*h3 de la homepage*/
+/*h2 de la homepage*/
 .title-homepage {
     margin-bottom: 30px;
 }
@@ -58,4 +58,10 @@ body {
 
 img {
     object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding: 60px 160px 50px 160px;
+    }
 }

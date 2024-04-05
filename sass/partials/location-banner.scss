@@ -33,11 +33,11 @@
 .banner {
 	padding: 50px 0;
 
-    h2, p {
+    .tagline, p {
         text-align: center;
     }
 
-	h2 {
+	.tagline {
 		margin: auto;
         width: 75%;
 	}
@@ -48,5 +48,15 @@
 		color: $txt-grey;
 		margin: 10px auto 30px auto;
         width: 90%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.banner {
+        padding: 25px 0;
+		.tagline {
+			font-size: 40px;
+			margin-bottom: 25px;
+		}
 	}
 }
