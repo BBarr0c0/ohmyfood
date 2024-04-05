@@ -4,11 +4,11 @@
 
 .location {
     background-color: $location-bg-color;
-    color: $txt-grey;
+    color: $location-txt-color;
     height: 50px;
     text-align: center;
     padding-top: 15px;
-    box-shadow: 0px 2px 4px 4px #00000045;
+    box-shadow: 0px 2px 4px 3px #00000045;
     
 
     span {
@@ -19,12 +19,17 @@
     input {
         background-color: $location-bg-color;
         font-weight: 500;
-        color: $txt-grey;
+        color: $location-txt-color;
         width: 120px;
         outline: none; //supprime border de l'input quand sélectionné
     }
 }
 
+@media (min-width: 1024px) {
+    .location {
+        box-shadow: none;;
+    }
+}
 
 /************************************
 ************** BANNER ****************
@@ -45,7 +50,7 @@
 	p {
 		font-size: 18px;
         font-weight: 300;
-		color: $txt-grey;
+		color: $location-txt-color;
 		margin: 10px auto 30px auto;
         width: 90%;
 	}
