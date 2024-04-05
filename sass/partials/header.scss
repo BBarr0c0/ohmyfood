@@ -3,18 +3,31 @@
 *************************************/
 
 .homepage-header {
-    background-color: white;
-    text-align: center;
-    filter: drop-shadow(0px 2px 4px #00000045);
-
     display: flex;
     justify-content: center;
     align-items: center;
     height: 63px;
+    background-color: $bg-color-secondary;
+    filter: drop-shadow(0px 2px 2px #00000045);
     
     .logo-header {
-        width: 162px;
+        width: 200px;
+        height: 38px;
         object-fit:contain;
         padding-top: 10px;
     }
+}
+
+
+@media (min-width: 1024px) {
+    .homepage-header {
+        height: 96px;
+        padding-bottom: 15px;
+        filter:none;
+        
+        .logo-header {
+            height: 45px;
+        }
+    }
+    
 }

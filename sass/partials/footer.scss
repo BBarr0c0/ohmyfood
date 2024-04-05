@@ -3,7 +3,7 @@
 *************************************/
 
 footer {
-	background: $txt-grey;
+	background: $bg-color-footer;
     color: white;
     padding: 25px 20px;
     margin-top: 15px;
@@ -52,7 +52,6 @@ footer {
 
 	.nav-footer {
 		flex-direction: row;
-		// margin-top: 0;
 		align-items: center;
 		margin-bottom: 5px;
 

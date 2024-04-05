@@ -67,20 +67,30 @@ img {
 ************** HEADER ******************
 *************************************/
 .homepage-header {
-  background-color: white;
-  text-align: center;
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2705882353));
   display: flex;
   justify-content: center;
   align-items: center;
   height: 63px;
+  background-color: #FFFFFF;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2705882353));
 }
 .homepage-header .logo-header {
-  width: 162px;
+  width: 200px;
+  height: 38px;
   object-fit: contain;
   padding-top: 10px;
 }
 
+@media (min-width: 1024px) {
+  .homepage-header {
+    height: 96px;
+    padding-bottom: 15px;
+    filter: none;
+  }
+  .homepage-header .logo-header {
+    height: 45px;
+  }
+}
 /************************************
 ************** LOCATION ******************
 *************************************/
@@ -90,7 +100,7 @@ img {
   height: 50px;
   text-align: center;
   padding-top: 15px;
-  box-shadow: 0px 2px 4px 4px rgba(0, 0, 0, 0.2705882353);
+  box-shadow: 0px 2px 4px 3px rgba(0, 0, 0, 0.2705882353);
 }
 .location span {
   padding-right: 10px;
@@ -104,6 +114,11 @@ img {
   outline: none;
 }
 
+@media (min-width: 1024px) {
+  .location {
+    box-shadow: none;
+  }
+}
 /************************************
 ************** BANNER ****************
 *************************************/
@@ -138,7 +153,7 @@ img {
 ************ FONCTIONNEMENT *********
 *************************************/
 .fonctionnement {
-  background-color: white;
+  background-color: #FFFFFF;
 }
 .fonctionnement h3, .fonctionnement p {
   font-weight: 500;
@@ -208,7 +223,7 @@ img {
 }
 .restaurants a .card-restaurant {
   position: relative;
-  background-color: white;
+  background-color: #FFFFFF;
   height: 251px;
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
