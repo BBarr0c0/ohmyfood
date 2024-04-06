@@ -36,6 +36,7 @@
 *************************************/
 
 .banner {
+    background-color: $bg-color-primary;
 	padding: 50px 0;
 
     .tagline, p {
@@ -56,6 +57,14 @@
 	}
 }
 
+.banner-restaurant {
+    img {
+		// max-height: 512px;
+        height: 275px;
+		width: 100%;
+	}
+}
+
 @media (min-width: 1024px) {
 	.banner {
         padding: 25px 0;
@@ -64,4 +73,10 @@
 			margin-bottom: 25px;
 		}
 	}
+
+    .banner-restaurant {
+        img {
+            height: 383px;
+        }
+    }
 }

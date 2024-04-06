@@ -2,13 +2,13 @@
 ************** HEADER ******************
 *************************************/
 
-.homepage-header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 63px;
-    background-color: $bg-color-secondary;
     filter: drop-shadow(0px 2px 2px #00000045);
+    position: relative;
     
     .logo-header {
         width: 200px;
@@ -16,11 +16,22 @@
         object-fit:contain;
         padding-top: 10px;
     }
+
+    .arrow {
+		position: absolute;
+		left: 0;
+        padding: 22px;
+		color: $location-txt-color;
+
+        span {
+            font-size: 19px;
+        }
+	}
 }
 
 
 @media (min-width: 1024px) {
-    .homepage-header {
+    .header {
         height: 96px;
         padding-bottom: 15px;
         filter:none;
@@ -28,6 +39,11 @@
         .logo-header {
             height: 45px;
         }
+        
+        .arrow {
+            padding: 38px;
+            bottom: 0px;
+	    }
     }
     
 }

@@ -1,0 +1,117 @@
+.wrapper-menu {
+	padding: 0 10px;
+}
+
+.menu {
+	background-color: $bg-color-primary;
+	position: relative;
+	margin-top: -60px;
+	border-radius: 36px 36px 0 0;
+	padding-bottom: 40px;
+	
+
+	.title-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px 0;
+
+		h1 {
+			font-weight: 400;
+			font-family: 'Shrikhand', 'cursive';
+			font-size: 28px;
+			padding-left: 5px;
+		}
+
+		span {
+			font-size: 24px;
+			margin-right: 25px;
+		}
+	}
+
+	a {
+		color: black;
+
+		.card {
+			@include card;
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			padding: 15px;
+			margin-bottom: 12px;
+            background-color: $bg-color-secondary;
+		}
+
+        .fa-circle-check {
+            display: none;
+        }
+	}
+
+	.entrees-section,
+	.plats-section,
+	.desserts-section {
+		margin-bottom: 40px;
+
+		h2 {
+			font-weight: 300;
+			margin-bottom: 20px;
+			position: relative;
+		}
+
+		h2::after {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 40px;
+			border-bottom: 3px solid $tertiary-color;
+		}
+	}
+}
+
+.card-menu {
+
+	h3 {
+		font-weight: 500;
+		font-size: 18px;
+		margin-bottom: 5px;
+	}
+
+	p {
+		font-weight: 300;
+		font-size: 14px;
+	}
+}
+
+.card-price {
+	font-size: 15px;
+	font-weight: 700;
+	color: $color-txt;
+}
+
+@media (min-width: 1024px) {
+
+    .wrapper-menu {
+		max-width: 1055px; /*sur la maquette c'est la width max du menu*/
+		margin: auto;
+	}
+
+	.menu {
+		margin-top: -50px;
+
+		.title-section {
+			justify-content: center;
+
+			h1 {
+				margin-right: 20px;
+			}
+		}
+	}
+
+	.entrees-section,
+	.plats-section,
+	.desserts-section {
+		max-width: 634px; /*sur la maquette c'est la width max des sections du menu*/
+		margin: auto;
+	}
+}
