@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: #F6F6F6;
+  background-color: #FFFFFF;
 }
 
 /*h1 et h2 de la homepage*/
@@ -66,29 +66,42 @@ img {
 /************************************
 ************** HEADER ******************
 *************************************/
-.homepage-header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 63px;
-  background-color: #FFFFFF;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2705882353));
+  position: relative;
 }
-.homepage-header .logo-header {
+.header .logo-header {
   width: 200px;
   height: 38px;
   object-fit: contain;
   padding-top: 10px;
 }
+.header .arrow {
+  position: absolute;
+  left: 0;
+  padding: 22px;
+  color: #353535;
+}
+.header .arrow span {
+  font-size: 19px;
+}
 
 @media (min-width: 1024px) {
-  .homepage-header {
+  .header {
     height: 96px;
     padding-bottom: 15px;
     filter: none;
   }
-  .homepage-header .logo-header {
+  .header .logo-header {
     height: 45px;
+  }
+  .header .arrow {
+    padding: 38px;
+    bottom: 0px;
   }
 }
 /************************************
@@ -123,6 +136,7 @@ img {
 ************** BANNER ****************
 *************************************/
 .banner {
+  background-color: #F6F6F6;
   padding: 50px 0;
 }
 .banner .tagline, .banner p {
@@ -140,6 +154,11 @@ img {
   width: 90%;
 }
 
+.banner-restaurant img {
+  height: 275px;
+  width: 100%;
+}
+
 @media (min-width: 1024px) {
   .banner {
     padding: 25px 0;
@@ -148,13 +167,13 @@ img {
     font-size: 40px;
     margin-bottom: 25px;
   }
+  .banner-restaurant img {
+    height: 383px;
+  }
 }
 /************************************
 ************ FONCTIONNEMENT *********
 *************************************/
-.fonctionnement {
-  background-color: #FFFFFF;
-}
 .fonctionnement h3, .fonctionnement p {
   font-weight: 500;
 }
@@ -213,6 +232,9 @@ img {
 /************************************
 ************ RESTAURANTS *********
 *************************************/
+.restaurants {
+  background-color: #F6F6F6;
+}
 .restaurants .cards-restaurant-container {
   display: flex;
   flex-direction: column;
@@ -286,6 +308,109 @@ img {
     width: 45%;
   }
 }
+.wrapper-menu {
+  padding: 0 10px;
+}
+
+.menu {
+  background-color: #F6F6F6;
+  position: relative;
+  margin-top: -60px;
+  border-radius: 36px 36px 0 0;
+  padding-bottom: 40px;
+}
+.menu .title-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+.menu .title-section h1 {
+  font-weight: 400;
+  font-family: "Shrikhand", "cursive";
+  font-size: 28px;
+  padding-left: 5px;
+}
+.menu .title-section span {
+  font-size: 24px;
+  margin-right: 25px;
+}
+.menu a {
+  color: black;
+}
+.menu a .card {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 12px;
+  background-color: #FFFFFF;
+}
+.menu a .fa-circle-check {
+  display: none;
+}
+.menu .entrees-section,
+.menu .plats-section,
+.menu .desserts-section {
+  margin-bottom: 40px;
+}
+.menu .entrees-section h2,
+.menu .plats-section h2,
+.menu .desserts-section h2 {
+  font-weight: 300;
+  margin-bottom: 20px;
+  position: relative;
+}
+.menu .entrees-section h2::after,
+.menu .plats-section h2::after,
+.menu .desserts-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  border-bottom: 3px solid #99E2D0;
+}
+
+.card-menu h3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.card-menu p {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.card-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #353535;
+}
+
+@media (min-width: 1024px) {
+  .wrapper-menu {
+    max-width: 1055px; /*sur la maquette c'est la width max du menu*/
+    margin: auto;
+  }
+  .menu {
+    margin-top: -50px;
+  }
+  .menu .title-section {
+    justify-content: center;
+  }
+  .menu .title-section h1 {
+    margin-right: 20px;
+  }
+  .entrees-section,
+  .plats-section,
+  .desserts-section {
+    max-width: 634px; /*sur la maquette c'est la width max des sections du menu*/
+    margin: auto;
+  }
+}
 /************************************
 ************ FOOTER *****************
 *************************************/
@@ -293,7 +418,6 @@ footer {
   background: #353535;
   color: white;
   padding: 25px 20px;
-  margin-top: 15px;
 }
 footer h4 {
   font-size: 18px;
