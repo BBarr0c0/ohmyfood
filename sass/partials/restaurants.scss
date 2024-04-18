@@ -15,7 +15,7 @@
 		color: black;
 
 		.card-restaurant {
-            position: relative; //sert à .new-restaurant, .fa-heart et img
+            position: relative; //sert à .new-restaurant
             background-color: $bg-color-secondary;
 			height: 251px;
 			@include card;
@@ -27,9 +27,7 @@
 			width: 100%;
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
-			position: absolute;
-			top: -57px;
-			width: 100%;
+			margin-top: -57px;
 		}
 
 	}
@@ -59,8 +57,6 @@
 		justify-content: space-between;
 		padding: 15px 30px 15px 15px;
 		align-items: center;
-		position: absolute;
-		bottom: 0;
 		width: 100%;
 
 		h3, p {
@@ -68,10 +64,9 @@
 		}
 
 		.fa-heart {
-			font-size: 22px;
-            position: absolute;
-            right: 25px;
-		}
+			font-size: 24px;
+			margin-bottom: 15px;
+		}	
 	}
 }
 
@@ -89,6 +84,10 @@
 
 		a {
 			width: 45%;
-		}
+		}	
 	}
+	
+	#restaurants .fa-heart {
+			font-size: 25px;
+		}
 }

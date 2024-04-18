@@ -2,6 +2,154 @@
 /*************************
 ******** Variables *******
 *************************/
+/************************
+****LOADING ANIM*********
+************************/
+@keyframes loading-container {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spoons-color {
+  0% {
+    color: #9356DC;
+  }
+  20% {
+    color: #9356DC;
+  }
+  40% {
+    color: #FF79DA;
+  }
+  60% {
+    color: #FF79DA;
+  }
+  80% {
+    color: #99E2D0;
+  }
+  100% {
+    color: #99E2D0;
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*************************
+*****HEARTS ANIMATION*****
+**************************/
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.heart .unfilled {
+  position: absolute;
+  transition: color 1000ms;
+}
+.heart:hover .unfilled {
+  color: transparent;
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  background-clip: text;
+}
+.heart .filled {
+  position: absolute;
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  background-clip: text;
+  color: transparent;
+  transform: scale(0);
+  transition: transform 500ms;
+}
+.heart:hover .filled {
+  background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
+  background-clip: text;
+  color: transparent;
+  transform: scale(1);
+  transition: transform 500ms;
+}
+.heart .fa-heart::before {
+  content: "\f004";
+}
+
+/***********************
+*****MENU ANIMATION*****
+************************/
+@keyframes FadeIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.menu-entrees {
+  transform: scale(0);
+  animation: FadeIn 1s forwards;
+  animation-delay: 0.2s;
+}
+
+.menu-plats {
+  transform: scale(0);
+  animation: FadeIn 1s forwards;
+  animation-delay: 0.4s;
+}
+
+.menu-desserts {
+  transform: scale(0);
+  animation: FadeIn 1s forwards;
+  animation-delay: 0.6s;
+}
+
+/******************
+***** LOADING *****
+******************/
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F6F6F6;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  opacity: 1;
+  animation: loading-container 0.6s ease-in-out 0s forwards;
+}
+.loading-container .spoons .fa-spoon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.loading-container .spoons .fa-spoon:first-child {
+  animation: spoons-color 3s infinite ease;
+  animation-delay: 300ms;
+}
+.loading-container .spoons .fa-spoon:nth-child(2) {
+  animation: spoons-color 3s infinite ease;
+  animation-delay: 600ms;
+}
+.loading-container .spoons .fa-spoon:last-child {
+  animation: spoons-color 3s infinite ease;
+  animation-delay: 900ms;
+}
+.loading-container .loading {
+  border: 20px solid;
+  border-color: #9356DC transparent;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  animation: loading 1s infinite linear;
+  position: absolute;
+}
+
 /****************************
 ****** GENERAL / BODY *******
 ****************************/
@@ -33,17 +181,26 @@ body {
 }
 
 .btn {
-  height: 50px;
-  width: 218px;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50px;
+  width: 218px;
+  margin: auto;
   background: linear-gradient(356deg, #9356DC -11%, #FF79DA 123%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  opacity: 1;
   color: white;
   border-radius: 25px;
   font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease, opacity 0.5s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: box-shadow 0.5s ease, opacity 0.5s ease;
 }
 
 .logo-header, .logo-footer {
@@ -61,7 +218,8 @@ img {
 
 @media (min-width: 1024px) {
   .wrapper {
-    padding: 60px 160px 50px 160px;
+    max-width: 1080px;
+    margin: auto;
   }
 }
 /************************************
@@ -85,6 +243,7 @@ img {
 .header .arrow {
   position: absolute;
   left: 0;
+  top: 0;
   padding: 22px;
   color: #353535;
 }
@@ -259,9 +418,7 @@ img {
   width: 100%;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  position: absolute;
-  top: -57px;
-  width: 100%;
+  margin-top: -57px;
 }
 
 .restaurants .new-restaurant {
@@ -284,17 +441,14 @@ img {
   justify-content: space-between;
   padding: 15px 30px 15px 15px;
   align-items: center;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 .restaurants .card-content h3, .restaurants .card-content p {
   padding-bottom: 5px;
 }
 .restaurants .card-content .fa-heart {
-  font-size: 22px;
-  position: absolute;
-  right: 25px;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 @media (min-width: 1024px) {
@@ -309,6 +463,9 @@ img {
   }
   .restaurants a {
     width: 45%;
+  }
+  #restaurants .fa-heart {
+    font-size: 25px;
   }
 }
 .wrapper-menu {
@@ -334,30 +491,19 @@ img {
   font-size: 28px;
   padding-left: 5px;
 }
-.menu .title-section span {
+.menu .title-section .heart {
+  padding: 0 30px;
+}
+.menu .title-section .fa-heart {
   font-size: 24px;
-  margin-right: 25px;
 }
 .menu a {
   color: black;
 }
-.menu a .card {
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 15px;
-  margin-bottom: 12px;
-  background-color: #FFFFFF;
-}
-.menu a .fa-circle-check {
-  display: none;
-}
 .menu .entrees-section,
 .menu .plats-section,
 .menu .desserts-section {
-  margin-bottom: 40px;
+  padding-bottom: 30px;
 }
 .menu .entrees-section h2,
 .menu .plats-section h2,
@@ -377,6 +523,17 @@ img {
   border-bottom: 3px solid #99E2D0;
 }
 
+.card-menu, .card-menu h3, .card-menu p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-menu {
+  flex-grow: 1;
+  margin-left: 15px;
+  margin-bottom: 13px;
+}
 .card-menu h3 {
   font-weight: 500;
   font-size: 18px;
@@ -387,12 +544,63 @@ img {
   font-size: 14px;
 }
 
-.card-price {
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 72px;
+  margin-bottom: 12px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+.card .container-validation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #99E2D0;
+  color: white;
+  width: 59px;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+  transform: translateX(60px);
+  transition: transform 0.5s ease;
+}
+.card:hover .container-validation {
+  transform: translateX(0px);
+  transition: transform 0.5s ease;
+}
+.card .fa-check-circle {
+  color: white;
+  font-size: 20px;
+  margin-top: 2px;
+}
+.card .card-price {
+  margin-left: 15px;
+  margin-bottom: 13px;
   font-size: 15px;
   font-weight: 700;
   color: #353535;
+  transform: translateX(-20px);
+  transition: 0.5s ease;
+}
+.card:hover .card-price {
+  margin-left: 50px;
+  margin-right: 40px;
+  transform: translateX(-40px);
+  transition: 0.5s ease;
 }
 
+@media (max-width: 373px) {
+  .menu .card-price {
+    margin-left: 30px;
+  }
+}
 @media (min-width: 1024px) {
   .wrapper-menu {
     max-width: 1055px; /*sur la maquette c'est la width max du menu*/
@@ -407,9 +615,12 @@ img {
   .menu .title-section h1 {
     margin-right: 20px;
   }
-  .entrees-section,
-  .plats-section,
-  .desserts-section {
+  .menu .title-section .fa-heart {
+    font-size: 26px;
+  }
+  .menu .entrees-section,
+  .menu .plats-section,
+  .menu .desserts-section {
     max-width: 634px; /*sur la maquette c'est la width max des sections du menu*/
     margin: auto;
   }
@@ -423,7 +634,7 @@ footer {
   padding: 25px 20px;
 }
 footer h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 }
 
