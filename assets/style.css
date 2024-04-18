@@ -122,7 +122,7 @@
   width: 100%;
   z-index: 3;
   opacity: 1;
-  animation: loading-container 0.6s ease-in-out 0s forwards;
+  animation: loading-container 0.6s ease-in-out 3s forwards;
 }
 .loading-container .spoons .fa-spoon {
   font-size: 30px;
