@@ -180,6 +180,10 @@ body {
   margin-bottom: 30px;
 }
 
+a {
+  color: black;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -214,6 +218,10 @@ body {
 
 img {
   object-fit: cover;
+}
+
+.card {
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
@@ -402,10 +410,7 @@ img {
   flex-direction: column;
   gap: 25px;
 }
-.restaurants a {
-  color: black;
-}
-.restaurants a .card-restaurant {
+.restaurants .card-restaurant {
   position: relative;
   background-color: #FFFFFF;
   height: 251px;
@@ -413,7 +418,8 @@ img {
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   overflow: hidden;
 }
-.restaurants a img {
+.restaurants img {
+  display: block;
   height: 231px;
   width: 100%;
   border-top-left-radius: 15px;
@@ -443,6 +449,10 @@ img {
   align-items: center;
   width: 100%;
 }
+.restaurants .card-content .link {
+  position: absolute;
+  inset: 0; /*Prendre tout l'espace de son ancêtre positionné*/
+}
 .restaurants .card-content h3, .restaurants .card-content p {
   padding-bottom: 5px;
 }
@@ -461,7 +471,7 @@ img {
     justify-content: space-between;
     gap: 50px;
   }
-  .restaurants a {
+  .restaurants .card-restaurant {
     width: 45%;
   }
   #restaurants .fa-heart {
