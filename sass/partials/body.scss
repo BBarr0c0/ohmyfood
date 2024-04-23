@@ -29,6 +29,10 @@ body {
     margin-bottom: 30px;
 }
 
+a {
+    color: black;
+}
+
 .btn {
 	display: flex;
 	justify-content: center;
@@ -63,6 +67,10 @@ body {
 
 img {
     object-fit: cover;
+}
+
+.card {
+    cursor: pointer;
 }
 
 @media (min-width: 1024px) {

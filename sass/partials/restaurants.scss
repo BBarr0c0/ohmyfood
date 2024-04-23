@@ -11,28 +11,25 @@
 		gap: 25px;
 	}
 
-	a {
-		color: black;
+	.card-restaurant {
+		position: relative; //sert à .new-restaurant et à .link
+		background-color: $bg-color-secondary;
+		height: 251px;
+		@include card;
+		overflow: hidden;
+	}
 
-		.card-restaurant {
-            position: relative; //sert à .new-restaurant
-            background-color: $bg-color-secondary;
-			height: 251px;
-			@include card;
-			overflow: hidden;
-		}
-
-		img {
-			height: 231px;
-			width: 100%;
-			border-top-left-radius: 15px;
-			border-top-right-radius: 15px;
-			margin-top: -57px;
-		}
-
+	img {
+		display: block;
+		height: 231px;
+		width: 100%;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		margin-top: -57px;
 	}
 
 }
+
 
 .restaurants {
 
@@ -59,6 +56,11 @@
 		align-items: center;
 		width: 100%;
 
+		.link {
+			position: absolute;
+			inset: 0; /*Prendre tout l'espace de son ancêtre positionné*/
+		}
+
 		h3, p {
 			padding-bottom: 5px;
 		}
@@ -82,7 +84,7 @@
 			gap: 50px;
 		}
 
-		a {
+		.card-restaurant {
 			width: 45%;
 		}	
 	}
