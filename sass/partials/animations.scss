@@ -70,8 +70,6 @@
 
     &:hover .unfilled {
         color: transparent;
-        background: $heart-color;
-        background-clip: text;
     }
 
     .filled {
@@ -88,12 +86,8 @@
         background-clip: text;
         color: transparent;
         transform: scale(1);
-        transition: transform 500ms;
     }
 
-    .fa-heart::before {
-        content: "\f004";
-    }
 }
 
 
